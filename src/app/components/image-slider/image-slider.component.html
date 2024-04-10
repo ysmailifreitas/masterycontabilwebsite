@@ -1,0 +1,24 @@
+<section class="relative h-screen w-screen flex flex-col justify-center overflow-x-hidden" style="background-color:{{this.slides[currentIndex].bgColor}}" id="main">
+<div class="flex {{this.slides[currentIndex].flex}} h-screen items-center justify-center content-center" style="background-color:{{this.slides[currentIndex].bgColor}}" #slideContainer>
+  <div class=" w-1/2 text-center p-4 space-y-10" >
+    <h2 class="text-[#043C47] text-4xl mb-14">{{ slides[currentIndex].title }}</h2>
+    <p class="text-[#393939] text-center w-full text-2xl" style="color:{{ slides[currentIndex].color}};">{{ slides[currentIndex].subTitle }}</p>
+    <p class="text-[#393939] text-center text-2xl" style="color:{{ slides[currentIndex].color}};">{{ slides[currentIndex].content }}</p>
+  </div>
+  <img ngSrc="{{getCurrentSlideUrl()}}" height="508" width="454" alt="">
+</div>
+<button (click)="goToPreviousSlide()"
+        class="absolute left-5 top-1/2 hover:scale-125 duration-300">
+  <img ngSrc="assets/prev.png" height="50" width="50" alt="">
+</button>
+<button (click)="goToNextSlide($event)"
+        class="absolute right-5 top-1/2 hover:scale-125 duration-300">
+  <img ngSrc="assets/next.png" height="50" width="50" alt="">
+</button>
+<div class="flex absolute right-0 left-0 w-[fit-content] bottom-0 mb-10 mx-auto">
+  @for(slide of slides; track slide){
+    <div (click)="setCurrentSlide($index);" [ngClass]="{'bg-[#254E5A]': currentIndex === $index}"
+      class="w-[25px] m-1 h-[25px] border-2 border-[#254E5A] hover:bg-[#254E5A] hover:scale-125 cursor-pointer duration-300  rounded-full"></div>
+  }
+</div>
+</section>

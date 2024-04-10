@@ -1,0 +1,59 @@
+.card-box .text-section{
+  transition: all 1s ease-out;
+  padding: 0 10px 0 10px;
+
+}
+h2:after {
+  content: '';
+  width: 10px;
+  margin: 0 auto;
+  border-bottom: solid 3px whitesmoke;
+  border-left: solid 3px whitesmoke;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  z-index: 1;
+  transition: width 1s linear;
+}
+.text-section > p{
+  transition-delay: .7s;
+}
+
+img{
+  transition: all 1s linear;
+  filter: brightness(70%);
+
+
+}
+.card-box:hover{
+  .section{
+    background-color: white;
+
+  }
+  img{
+    filter: brightness(40%);
+  }
+  h2:after {
+    width: 100%;
+    height: 0;
+    transform: rotate(0deg);
+  }
+  .text-section > p{
+    opacity: 100;
+    /*transform: translateY(10%);*/
+  }
+  .text-section > button{
+    opacity: 100;
+    /*transform: translateY(10%);*/
+  }
+  .text-section{
+    transform: translateY(-170px);
+  }
+
+}
+.card-box:hover:nth-child(3) {
+  .text-section{
+    transform: translateY(-130px);
+  }
+}

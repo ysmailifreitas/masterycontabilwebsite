@@ -1,0 +1,17 @@
+.seg-card{
+  transition: all .3s linear;
+  filter: brightness(80%);
+
+}
+img{
+  transition: all .3s ease-in;
+}
+.seg-card:hover{
+  transform: scale(115%);
+  filter: brightness(100%);
+  img{
+    transform: scale(180%);
+    padding-bottom: 60px;
+  }
+
+}
